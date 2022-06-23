@@ -34,6 +34,30 @@ function CalculateDailyWage(CheckEmp)
         break;
 }
 let EmpWage = Emphours * WageperHour;
-console.log("Employee Wage is: " + EmpWage);
+//console.log("Employee Wage is: " + EmpWage);
 return EmpWage;
 }
+
+const Working_Days=20;
+let totalEmpWage=0;
+for(let i=1; i<=Working_Days; i++)
+{
+    var empCheck=Math.floor(Math.random()*10) % 3;
+    empWage=CalculateDailyWage(empCheck);
+    totalEmpWage+=empWage;
+}
+console.log("Monthly Employee Wage = " + totalEmpWage);
+
+const Max_Hrs_In_Month =160;
+let totalEmpHrs=0;
+let totalWorkingDays=0;
+let totalWage=0;
+while(totalEmpHrs<=Max_Hrs_In_Month && totalWorkingDays<Working_Days)
+{
+    totalWorkingDays++;
+    totalEmpHrs++;
+    let empCheck=Math.floor(Math.random()*10) % 3;
+    let tempwage=CalculateDailyWage(empCheck);
+    totalWage+=tempwage;
+}
+console.log("Total Employee Wage : "+totalWage + " in " + totalWorkingDays + " days and " + totalEmpHrs + " hours");
