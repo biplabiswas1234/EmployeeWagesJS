@@ -113,7 +113,7 @@ const MAX_HRS_IN_MONTH=160;
     //UC 8 - Map Function
     console.log("\nUC 8 - Employee Wage Map TotalHrs: "+Array.from(empDailyWageMap.values()).reduce(totalWages,0));
 
-    //UC 9 - Arrow Functions
+    //UC 9 - Arrow Function
     const findTotal = (totalVal, dailyVal) =>{
         return totalVal + dailyVal;
     }
