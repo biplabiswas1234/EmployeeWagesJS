@@ -49,6 +49,7 @@ const MAX_HRS_IN_MONTH=160;
     let empWage = calcDailyWage(totalEmpHrs);
     console.log("UC6 - Total Days: " + totalWorkingDays + "\nTotal Hours: " + totalEmpHrs +"\nEmployee Wage: " + empWage);
 
+    //UC 7A
     let totEmpWage=0;
     function sum(dailyWage)
     {
@@ -62,12 +63,21 @@ const MAX_HRS_IN_MONTH=160;
     }
     console.log("UC7A - Emp Wage With Reduce: "+empDailyWageArr.reduce(totalWages,0));
 
+    //UC 7B
     let dailyCntr = 0;
     function mapDayWithWage(dailyWage){
         dailyCntr++;
         return dailyCntr + " = " + dailyWage;
     }
     let mapDayWithWageArr = empDailyWageArr.map(mapDayWithWage);
-    console.log("\n UC7B - Daily Wage Map");
+    console.log("\nUC7B - Daily Wage Map");
     console.log(mapDayWithWageArr);
+
+    //UC 7C-Show Days When Full Time Wage of 160 were earned
+    function fulltimeWage(dailyWage) {
+        return dailyWage.includes("160");
+    }
+    let fullDayWageArr = mapDayWithWageArr.filter(fulltimeWage);
+    console.log("\nUC7C - Daily Wage Filter When Fulltime Wage Earned");
+    console.log(fullDayWageArr);
 }
