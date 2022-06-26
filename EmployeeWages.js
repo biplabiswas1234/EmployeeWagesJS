@@ -47,7 +47,7 @@ const MAX_HRS_IN_MONTH=160;
         empDailyWageArr.push(calcDailyWage(empHrs));
     }
     let empWage = calcDailyWage(totalEmpHrs);
-    console.log("Total Days: " + totalWorkingDays + "\nTotal Hours: " + totalEmpHrs +"\nEmployee Wage: " + empWage);
+    console.log("UC6 - Total Days: " + totalWorkingDays + "\nTotal Hours: " + totalEmpHrs +"\nEmployee Wage: " + empWage);
 
     let totEmpWage=0;
     function sum(dailyWage)
@@ -55,11 +55,19 @@ const MAX_HRS_IN_MONTH=160;
         totEmpWage += dailyWage;
     }
     empDailyWageArr.forEach(sum);
-    console.log("\nTotal Days: " + totalWorkingDays + "\nTotal Hours: " + totalEmpHrs +"\nEmployee Wage: " + totEmpWage);
+    console.log("\nUC7A - Total Days: " + totalWorkingDays + "\nTotal Hours: " + totalEmpHrs +"\nEmployee Wage: " + totEmpWage);
 
     function totalWages(totalWage,dailyWage){
         return totalWage + dailyWage;
     }
-    console.log("Emp Wage With Reduce: "+empDailyWageArr.reduce(totalWages,0));
+    console.log("UC7A - Emp Wage With Reduce: "+empDailyWageArr.reduce(totalWages,0));
 
+    let dailyCntr = 0;
+    function mapDayWithWage(dailyWage){
+        dailyCntr++;
+        return dailyCntr + " = " + dailyWage;
+    }
+    let mapDayWithWageArr = empDailyWageArr.map(mapDayWithWage);
+    console.log("\n UC7B - Daily Wage Map");
+    console.log(mapDayWithWageArr);
 }
