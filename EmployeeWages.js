@@ -90,9 +90,16 @@ function isAllFulltimeWage(dailyWage){
     return dailyWage.includes("160");
 }
 console.log("\nUC 7E - Check All Element Have Full Time Wage: "+fullDayWageArr.every(isAllFulltimeWage));
- //UC 7F - Check if there is any Part Time Wage
+ //UC 7F - Check if there is any Part Time Wages
  function isAnyPartTimeWage(dailyWage){
     return dailyWage.includes("80");
+    
 }
 console.log("\nUC 7F - Check If Any Part Time Wage: "+mapDayWithWageArr.some(isAnyPartTimeWage));
+//UC 7G - Find The Number Of Days The Employee Worked
+function totalDaysWorked(numOfDays,dailyWage){
+    if(dailyWage > 0) return numOfDays+1;
+    return numOfDays;
+}
+console.log("\nUC 7G - Number Of Days Employee Worked: "+empDailyWageArr.reduce(totalDaysWorked, 0));
 }
